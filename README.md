@@ -1,5 +1,5 @@
 # marketwatchwinner
-THIS IS UNFINISHED/BROKEn PROGRAM
+THIS IS UNFINISHED/BROKEN PROGRAM
 
 To-Do List:
  - Get login authentication to work. 
