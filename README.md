@@ -6,4 +6,8 @@ To-Do List:
  - Get marketwatch.com authentication to work. 
  - Function: Buying & Selling Stocks
 
+Requirements:
+ - Requests-HTML https://github.com/kennethreitz/requests-html
+ - PrettyTable https://github.com/dprince/python-prettytable
+
 ![Output](https://i.imgur.com/kPw9io2.gif "Output")
