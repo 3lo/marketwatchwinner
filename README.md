@@ -6,4 +6,4 @@ To-Do List:
  - Get marketwatch.com authentication to work. 
  - Function: Buying & Selling Stocks
 
-![alt text](https://imgur.com/kPw9io2 "Output")
+![Output](https://i.imgur.com/kPw9io2.gif "Output")
