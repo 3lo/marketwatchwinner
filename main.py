@@ -6,38 +6,6 @@ from prettytable import PrettyTable
 session = HTMLSession()
 print("MarketWatch PythonBot v1")
 
-# MarketWatch Authentication
-username = "[ENTER USERNAME]"
-password = "[ENTER PASSWORD]"
-
-login_URL = "https://sso.accounts.dowjones.com/usernamepassword/login"
-# https://sso.accounts.dowjones.com/public/api/users/validate_userpassword - public api to validate username/password
-data = {
-    "username": username,
-    "password": password,
-    "connection": "DJldap",
-    "client_id": "5hssEAdMy0mJTICnJNvC9TXEw3Va7jfO",
-    "tenant": "sso"
-}
-
-r = session.post(url=login_URL, data=data)
-print(r)
-
-'''
-game_URL = "[ENTER GAME URL]"
-g = session.get(url=game_URL)
-print(g.html.text)
-
-# Game INFORMATION
-[GET] [ENTER GAME URL]/tradeorder?chartingSymbol=STOCK/US/XNYS/{stock}
-[POST] [ENTER GAME URL]/trade/submitorder
-JSON data
-Fuid    STOCK-XNAS-MU
-Shares  1
-Term    Cancelled
-Type    Buy
-'''
-
 # Gathering Intel (Pulling Stock Information & Stats)
 current = time.strftime('%H:%M:%S')  # print(time.tzname) // need to set timezone for non-EST timezones
 open_time = '09:30:00'  # NYSE Opening Time is 9:30 am ET
@@ -113,7 +81,10 @@ for i in range(0, 100):
         price_history = history.html.find('td')
         # get the closing prices of the last 10 days
         for z in range(0, 10):
-            priceList.append(float(price_history[y].text))
+            try:
+                priceList.append(float(price_history[y].text))
+            except ValueError:
+                priceList.append(float(price_history[y+1].text))
             y = y + 7
             if y >= 74:
                 y = 4
