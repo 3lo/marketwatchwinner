@@ -43,7 +43,7 @@ class Stock:
                     self.peg_ratio, self.return_on_equity, self.current_ratio
 
 
-screener_URL = "https://finance.yahoo.com/screener/predefined/most_actives?offset=0&count=100"
+screener_URL = "https://finance.yahoo.com/screener/predefined/undervalued_growth_stocks?offset=0&count=100"
 screen = session.get(url=screener_URL)
 screening = screen.html.find('td')
 
