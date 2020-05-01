@@ -31,7 +31,7 @@ class Stock:
     def __init__(self, s, p, pe, pb, de, fcf, peg, roe, cr):
         self.symbol = s
         self.price = p
-        self.pe_ratio = pe  # lower is better
+        self.pe_ratio = pe  # higher is favorable
         self.pb_ratio = pb  # <1 means undervalued
         self.de_ratio = de  # lower is better
         self.free_cash_flow = fcf  # the higher the better
